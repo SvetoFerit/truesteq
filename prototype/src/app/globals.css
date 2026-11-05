@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #14201a;
+  --muted: #5c6b62;
+  --panel: #f7f5f0;
+  --wash: #e8efe8;
+  --line: #d5ddd6;
+  --accent: #1f6b4a;
+  --accent-deep: #0f3d2c;
+  --sand: #efe6d6;
+  --background: #f3efe6;
+  --foreground: #14201a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #dce8df 0%, transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, #e8dcc8 0%, transparent 50%),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+.panel {
+  background: color-mix(in oklab, var(--panel) 92%, white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+.slide-enter {
+  animation: slide-enter 0.35s ease;
+}
+
+@keyframes slide-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
